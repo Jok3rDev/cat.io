@@ -14,5 +14,9 @@ class AbstractLoader
 	protected static $instance;
 	protected $classCollection = array();
 	const CLASS_EXTENSION = '.php';
-/*	const VENDOR_DIRECTORY = 'vendor';*/
+	const VENDOR_DIRECTORY = 'vendor';
+
+	abstract protected function getInstalleurDirectories();
+	abstract protected function getVendorDirectory();
+	abstract protected function getApplicationDirectory();
 }
