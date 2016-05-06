@@ -19,4 +19,16 @@ class AbstractLoader
 	abstract protected function getInstalleurDirectories();
 	abstract protected function getVendorDirectory();
 	abstract protected function getApplicationDirectory();
+
+	protected static function run() {
+		if (!(static::$instance instanceof static)) {
+			static::$instance = new static;
+		}
+
+		return static::$instance;
+	}
+
+	protected static function register() {
+		return static::run();
+	}
 }
