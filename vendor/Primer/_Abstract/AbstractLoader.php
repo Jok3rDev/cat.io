@@ -22,13 +22,6 @@ abstract class AbstractLoader
 	abstract protected function getVendorDirectory();
 	abstract protected function getApplicationDirectory();
 
-	private static function run() {
-		if (!(static::$instance instanceof static)) {
-			static::$instance = new static;
-		}
-		return static::$instance;
-	}
-
 	public static function register() {
 		return static::run()->handlerClassDirectories()->autoload();
 	}

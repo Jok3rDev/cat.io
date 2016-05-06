@@ -2,9 +2,9 @@
 
 
 namespace Framework;
+use Cat\Core\Engine;
 
-
-class App
+final class App extends Engine
 {
 
 }

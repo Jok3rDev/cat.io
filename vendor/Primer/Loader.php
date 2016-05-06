@@ -12,6 +12,13 @@ require_once '_Abstract\AbstractLoader.php';
 
 class Loader extends _Abstract\AbstractLoader
 {
+	protected static function run() {
+		if (!isset(static::$instance)) {
+			$class = __CLASS__;
+			static::$instance = new $class;
+		}
+		return static::$instance;
+	}
 	protected function getVendorDirectory()
 	{
 		return parent::processPathDirectory(__DIR__, 1);

@@ -5,4 +5,5 @@
     environment: Public
     needLogin: true
     loginPage: IRM
+    needSession: true
 }
