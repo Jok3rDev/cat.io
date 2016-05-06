@@ -1,0 +1,7 @@
+# Fichier de configuration pour serveur
+{
+    rsync: true
+    username: ftrimech
+    ip: "192.168.5.13"
+    folder: framework
+}

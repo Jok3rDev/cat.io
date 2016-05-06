@@ -1,0 +1,11 @@
+# Fichier de configuration pour les Pages
+{
+    home: {
+        title:  Accueil
+        isHeader: true
+        isFooter: true
+        class: {
+                body: body-login
+        }
+    }
+}
