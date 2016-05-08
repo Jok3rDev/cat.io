@@ -1,7 +1,7 @@
 <?php
 
 /*
-   Fichier automatiquement généré le 06/05/16 à 15:35:08
+   Fichier Project automatiquement généré le 08/05/16 à 01:04:36
    Par Cat\Services\GenerateCache (D:\Localhost\www\projects\framework\vendor\Cat\Services\GenerateCache.php)
 
    Ne pas modifier à la main !!
@@ -10,11 +10,12 @@
    Ce fichier contient les différents paramètres nécéssaires au fonctionnement de l'application
 */
 
-return stdClass::__set_state(array(
-   'name' => 'Framework',
-   'namespace' => 'Framework',
-   'environment' => 'Public',
-   'needLogin' => true,
-   'loginPage' => 'IRM',
-   'needSession' => true,
-));
+return array (
+  'name' => 'Framework',
+  'namespace' => 'Framework',
+  'environment' => 'Public',
+  'needLogin' => true,
+  'loginPage' => 'IRM',
+  'needSession' => true,
+  'sessionAppNamespace' => 'Framework',
+);

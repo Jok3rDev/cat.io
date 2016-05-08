@@ -1,7 +1,7 @@
 <?php
 
 /*
-   Fichier automatiquement généré le 06/05/16 à 15:35:08
+   Fichier Pages automatiquement généré le 08/05/16 à 01:04:36
    Par Cat\Services\GenerateCache (D:\Localhost\www\projects\framework\vendor\Cat\Services\GenerateCache.php)
 
    Ne pas modifier à la main !!
@@ -10,15 +10,15 @@
    Ce fichier contient les différents paramètres nécéssaires au fonctionnement de l'application
 */
 
-return stdClass::__set_state(array(
-   'home' => 
-  stdClass::__set_state(array(
-     'title' => 'Accueil',
-     'isHeader' => true,
-     'isFooter' => true,
-     'class' => 
-    stdClass::__set_state(array(
-       'body' => 'body-login',
-    )),
-  )),
-));
+return array (
+  'home' => 
+  array (
+    'title' => 'Accueil',
+    'isHeader' => true,
+    'isFooter' => true,
+    'class' => 
+    array (
+      'body' => 'body-login',
+    ),
+  ),
+);

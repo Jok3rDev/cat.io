@@ -2,19 +2,14 @@
 
 namespace Cat\Services;
 
-use \HJSON\HJSONParser;
-use \HJSON\HJSONStringifier;
+use \YAML\Parser;
 
 class Parser {
 
-	public static function parse(string $file, bool $keepWSC = false) {
+	public static function parse(string $file) {
 		$parser = static::newParser();
 		$file = static::getFileContent($file);
-		$obj = $parser->parse($file);
-		if ($keepWSC) {
-			$obj = $parser->parseWsc($file);
-		}
-		return $obj;
+		return $parser->parse($file);
 	}
 
 	protected static function getFileContent($file) {
@@ -23,7 +18,7 @@ class Parser {
 
 	protected static function newParser()
 	{
-		return new HJSONParser();
+		return new Parser();
 	}
 }
 

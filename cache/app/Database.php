@@ -1,7 +1,7 @@
 <?php
 
 /*
-   Fichier automatiquement généré le 06/05/16 à 15:35:08
+   Fichier Database automatiquement généré le 08/05/16 à 01:04:36
    Par Cat\Services\GenerateCache (D:\Localhost\www\projects\framework\vendor\Cat\Services\GenerateCache.php)
 
    Ne pas modifier à la main !!
@@ -10,13 +10,13 @@
    Ce fichier contient les différents paramètres nécéssaires au fonctionnement de l'application
 */
 
-return stdClass::__set_state(array(
-   'type' => 'Embed',
-   'parameters' => 
-  stdClass::__set_state(array(
-     'name' => 'Local',
-     'type' => 'mysql',
-     'user' => 'root',
-     'pass' => 'root',
-  )),
-));
+return array (
+  'type' => 'Embed',
+  'parameters' => 
+  array (
+    'name' => 'Local',
+    'type' => 'mysql',
+    'user' => 'root',
+    'pass' => 'root',
+  ),
+);

@@ -4,7 +4,7 @@ namespace Cat\Services;
 
 class GenerateCache
 {
-	const CONFIG_EXTENSION = '.hjson';
+	const CONFIG_EXTENSION = '.yml';
 	const CACHE_EXTENSION  = '.php';
 	const CHMOD_RIGHT = 0775;
 	const WWW_DATA_GROUP = 33;
@@ -38,6 +38,7 @@ class GenerateCache
 		foreach ($path as $key => $value) {
 			$configFile = PathFactory::get(__DIR__, 3, array('config'), $value);
 			$tmpCacheFile = self::removeConfigExtension($value);
+			$this->listFiles[$key]['name'] = $tmpCacheFile;
 			$tmpCacheFile = self::addCacheExtension($tmpCacheFile);
 			$cacheFile 	= PathFactory::get(__DIR__, 3, array('cache', 'app'), $tmpCacheFile);
 			$this->listFiles[$key]['conf'] = $configFile;
@@ -49,23 +50,21 @@ class GenerateCache
 	private function generateCache() {
 		foreach ($this->listFiles as $value) {
 			$this->touchCacheFile($value['cache']);
-			$this->insertCache($value['conf'], $value['cache']);
+			$this->insertCache($value['conf'], $value['cache'], $value['name']);
 		}
 	}
 
-	private function insertCache($conf, $cache) {
+	private function insertCache($conf, $cache, $name) {
 		$date = date('d/m/y');
 		$time = date('H:i:s');
 		$author = __CLASS__;
 		$file = __FILE__;
-
 		$var = var_export(Parser::parse($conf), true);
-
 		$content = <<<FILE
 <?php
 
 /*
-   Fichier automatiquement généré le $date à $time
+   Fichier $name automatiquement généré le $date à $time
    Par $author ($file)
 
    Ne pas modifier à la main !!

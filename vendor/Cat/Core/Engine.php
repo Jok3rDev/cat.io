@@ -5,7 +5,10 @@ use \Cat\_Abstract;
 class Engine extends _Abstract\AbstractEngine
 {
 	public static function launch() {
-		var_dump('TOTO');
-		return self::initialize();
+		return self::initialize()->deploy();
+	}
+
+	protected function deploy() {
+		Routeur::run($this);
 	}
 }

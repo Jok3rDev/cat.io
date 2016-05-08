@@ -1,9 +1,0 @@
-# Fichier de configuration de projet
-{
-    name:  Framework
-    namespace: Framework
-    environment: Public
-    needLogin: true
-    loginPage: IRM
-    needSession: true
-}
