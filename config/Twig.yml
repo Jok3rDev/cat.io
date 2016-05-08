@@ -5,4 +5,6 @@ cachePath: ../twig/cache/
 charset: UTF-8
 auto_reload: true
 baseLayout: static/layout
-fileSystem: ../view
+fileSystem:
+  base: ../view
+  admin: ../adminView

@@ -4,9 +4,9 @@
 namespace Framework\Controllers;
 
 
-class HomeController
+class HomeController extends \Cat\_Abstract\AbstractController
 {
-	public function __construct() {
-		var_dump(__CLASS__);
+	public function main() {
+		return $this->display();
 	}
 }

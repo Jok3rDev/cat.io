@@ -8,7 +8,8 @@ abstract class AbstractEngine
 {
 	protected static $instance;
 	protected $project;
-	
+	protected $pages;
+
 	protected $get;
 	protected $post;
 	protected $server;
@@ -18,6 +19,8 @@ abstract class AbstractEngine
 
 	const ROUTE_FILE = 'Routes.php';
 	const PROJECT_FILE = 'Project.php';
+	const PAGES_FILE = 'Pages.php';
+	const TWIG_FILE = 'Twig.php';
 	const CACHE_FOLDER = array('cache', 'app');
 
 	protected static function initialize() {
@@ -49,7 +52,9 @@ abstract class AbstractEngine
 
 	private function getConfiguration() {
 		$project = Services\PathFactory::get(__DIR__, 3, self::CACHE_FOLDER, self::PROJECT_FILE);
+		$page 	 = Services\PathFactory::get(__DIR__, 3, self::CACHE_FOLDER, self::PAGES_FILE);
 		$this->project = require_once $project;
+		$this->pages   = require_once $page;
 
 		return $this;
 	}

@@ -1,7 +1,7 @@
 <?php
 
 /*
-   Fichier Server automatiquement généré le 08/05/16 à 01:04:36
+   Fichier Server automatiquement généré le 08/05/16 à 19:25:41
    Par Cat\Services\GenerateCache (D:\Localhost\www\projects\framework\vendor\Cat\Services\GenerateCache.php)
 
    Ne pas modifier à la main !!

@@ -28,12 +28,8 @@ class Session
 		return session_status() === PHP_SESSION_ACTIVE;
 	}
 
-	public static function isValid($conf) {
-		if ($conf !== 'Public') {
-			return isset($_SESSION['user']['u_id']);
-		}
-
-		return isset($_SESSION['app']);
+	public static function isValid() {
+		return isset($_SESSION['user']['u_id']);
 	}
 
 	public static function getSession(string $conf) {

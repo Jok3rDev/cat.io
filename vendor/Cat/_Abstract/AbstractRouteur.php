@@ -31,14 +31,37 @@ abstract class AbstractRouteur
 			->handlerMethod()
 			->handlerArguments()
 			->prepareObjectInstance($engine->project['namespace'])
+			->needToRewrite()
 			->deploy($engine);
 		;
-		var_dump($this->get);
-		var_dump($this->args);
 	}
 
 	protected function deploy($engine) {
 		call_user_func_array(array(new $this->controller($engine), $this->method), $this->args);
+	}
+
+	protected function needToRewrite() {
+		$this->isLoginControllerNeeded();
+		return $this;
+	}
+
+	protected function isLoginControllerNeeded() {
+		if (!Services\Session::isSessionNeeded($this->project['needSession'])) {
+			return $this;
+		}
+		if ($this->project['loginPage'] === 'IRM') {
+			#\Cat\Services\Redirect::rewriteToIRM();
+		}
+
+		if (!($this->project['loginPage'] === $this->get->controller)) {
+			#\Cat\Services\Redirect::rewrite($this->project['loginPage']);
+		}
+
+		return $this;
+	}
+
+	protected function isClassExist(string $class): bool {
+		return class_exists($class);
 	}
 
 	protected function handlerController() {
@@ -56,7 +79,7 @@ abstract class AbstractRouteur
 	}
 
 	protected function handlerMethod() {
-		$this->method =  ($this->get->method === '') ? 'main' : $this->get->method;
+		$this->method =  ($this->get->method === '' || !isset($this->get->method) ) ? 'main' : $this->get->method;
 		return $this;
 	}
 
@@ -74,6 +97,7 @@ abstract class AbstractRouteur
 	protected function setProperties($engine) {
 		$this->get 			 = $engine->get;
 		$this->server		 = $engine->server;
+		$this->project		 = $engine->project;
 		$this->route_file 	 = $engine::ROUTE_FILE;
 		$this->cache_folder  = $engine::CACHE_FOLDER;
 	}
@@ -100,7 +124,7 @@ abstract class AbstractRouteur
 		$parts[] = $namespace;
 		$parts[] = 'Controllers';
 		$parts[] = $this->controller;
-		$this->controller = implode('\\', $parts);
+		$this->controller = '\\' . implode('\\', $parts);
 
 		return $this;
 	}
