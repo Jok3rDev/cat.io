@@ -34,7 +34,8 @@ abstract class AbstractController
 	}
 	
 	private function setView($config) {
-		$page = $this->get->controller === '' ? 'home' : $this->get->controller;
+		$page = $this->get->controller === '' || is_null($this->get->controller) ? 'home' : $this->get->controller;
+
 		if (array_key_exists(strtolower($page), $config)) {
 			return new \Cat\Page($config[$page]);
 		}

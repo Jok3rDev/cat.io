@@ -1,7 +1,7 @@
 <?php
 
 /*
-   Fichier Twig automatiquement généré le 08/05/16 à 19:25:41
+   Fichier Twig automatiquement généré le 09/05/16 à 20:21:29
    Par Cat\Services\GenerateCache (D:\Localhost\www\projects\framework\vendor\Cat\Services\GenerateCache.php)
 
    Ne pas modifier à la main !!
@@ -17,5 +17,10 @@ return array (
   'charset' => 'UTF-8',
   'auto_reload' => true,
   'baseLayout' => 'static/layout',
-  'fileSystem' => '../view',
+  'fileSystem' => 
+  array (
+    'base' => '../view/base',
+    'admin' => '../view/admin',
+    'console' => '../view/console',
+  ),
 );

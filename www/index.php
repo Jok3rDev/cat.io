@@ -2,8 +2,8 @@
 
 require_once __DIR__ . '/../Autoload.php';
 
+Cat\Services\GenerateCache::generate();
 Framework\App::launch();
 
-Cat\Services\GenerateCache::generate();
 
 var_dump(__FILE__);
