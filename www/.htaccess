@@ -1,0 +1,14 @@
+RewriteEngine on
+
+RewriteBase /projects/framework/www/
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} (.+)/(assets/.*)
+RewriteRule . /framework/www/%2 [L,QSA]
+
+# Rewrite type MVC
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-zA-Z]+)/?([a-zA-Z]*)/?(.*) index.php?controller=$1&method=$2&args=$3 [L,QSA]
+#RewriteRule .* index.php [L,QSA]

@@ -1,0 +1,8 @@
+# Fichier de configuration de projet
+name: &name Framework
+namespace: *name
+environment: Public
+needLogin: true
+loginPage: IRM
+needSession: true
+sessionAppNamespace: *name

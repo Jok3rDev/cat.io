@@ -1,0 +1,8 @@
+# Fichier de configuration pour connexion SQL
+    # May be Local for LocalHost, Embed for embed param, or SupDev for SupdevDBI use
+type: Embed
+parameters:
+  name: Local
+  type: mysql
+  user: root
+  pass: root

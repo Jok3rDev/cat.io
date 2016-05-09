@@ -1,0 +1,13 @@
+# Fichier de configuration pour les Pages
+Default:
+  title:  Sans Titre
+  isHeader: true
+  isFooter: true
+  class:
+    body: body-login
+home:
+  title:  Accueil
+  isHeader: true
+  isFooter: true
+  class:
+    body: body-login

@@ -1,0 +1,11 @@
+# Fichier de configuration pour TWIG
+cache: true
+extension: .twig
+cachePath: ../twig/cache/
+charset: UTF-8
+auto_reload: true
+baseLayout: static/layout
+fileSystem:
+  base: ../view/base
+  admin: ../view/admin
+  console: ../view/console
